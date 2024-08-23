@@ -1,0 +1,126 @@
+/* Slide right transition */
+.slide-right-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.slide-right-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 500ms, transform 500ms;
+}
+.slide-right-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-right-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.slide-left-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.slide-left-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 500ms, transform 500ms;
+}
+.slide-left-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-left-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 500ms, transform 500ms;
+}
+.background-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 1.5s ease-in-out;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.background-image.zoomed-in {
+  transform: scale(1.1);
+}
+
+/* .multi-step-form-container {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  
+} */
+.zoom-in-image {
+  animation: zoomIn 2s forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.lazy-load-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.lazy-load-image-loaded {
+  transform: scale(1);
+}
+
+.step {
+  position: fixed;
+  width: 100%;
+}
+
+.initial-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+  width: 206.5vh;
+  position: relative;
+  background-color: aliceblue;
+  z-index: 1;
+}
+
+.initial-image {
+  transform: scale(0.9); /* Start slightly smaller */
+  opacity: 0; /* Start with opacity 0 */
+  animation: zoomIn 2s ease forwards; /* Animation to zoom in and fade in */
+}
+
+@keyframes zoomIn {
+  to {
+    transform: scale(1.1); /* Zoom-in effect */
+    opacity: 1; /* Fade in effect */
+  }
+}
+
+.initial-image-container.hide .initial-image {
+  transform: scale(1.1);
+  opacity: 0;
+}
+
+
+
+/* Add existing CSS for transitions and navigation buttons if needed */
+
+/* .navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+ */
